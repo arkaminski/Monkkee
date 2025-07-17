@@ -84,7 +84,7 @@ public class HomeTest extends BaseTest {
 
     }
 
-    @Test(description = "Click header menu fea" + "" + "tures fr", priority = 2)
+    @Test(description = "Click header menu features fr", priority = 2)
     @Owner("akaminski")
     public void clickHeaderMenuFeaturesFr() {
         homePage.open()
