@@ -21,14 +21,11 @@ public class MainTest extends BaseTest {
                 .enterLoginAndPassword(email, password)
                 .userClickButton();
         mainPage.clickCreateButton();
-
         textEditorPage.enterText(enteredText)
                 .clickButtonSave();
         mainPage.clickButtonHome()
                 .textMessageRecords(homeTextNotebook);
-
         assertEquals(enteredText, homeTextNotebook, "Текс не совподает");
-
         mainPage.selectCheckBox();
         contextMenuPage.clickButtonDelete()
                 .getText();
@@ -47,11 +44,9 @@ public class MainTest extends BaseTest {
                 .selectCheckBox();
         contextMenuPage.clickButtonDelete()
                 .getText();
-
         String alertText = contextMenuPage.getText();
         assertEquals(alertText, "Do you really want to delete the selected entries?", "Текст сообщения не верный");
         contextMenuPage.alertAccept();
-
     }
 
     @Test(description = "Search for text by text")
@@ -65,14 +60,11 @@ public class MainTest extends BaseTest {
         mainPage.clickButtonHome()
                 .searchInput(enteredText)
                 .messageSearch();
-
         assertEquals(mainPage.messageSearch(), enteredText, "Text does not match");
-
         mainPage.selectCheckBox();
         contextMenuPage.clickButtonDelete()
                 .getText();
         contextMenuPage.alertAccept();
-
     }
 
     @Test(description = "Search text for calendar")
@@ -122,9 +114,9 @@ public class MainTest extends BaseTest {
                 .selectingTagName(textTags);
         contextMenuPage.clickButtonTeg();
         contextMenuPage.getText();
-
         String alertText = contextMenuPage.getText();
-        assertEquals(alertText, "Do you really want to delete the tag? All entries related to the tag remain unchanged.", "Текст сообщения не верный");
+        assertEquals(alertText, "Do you really want to delete the tag? " +
+                "All entries related to the tag remain unchanged.", "Текст сообщения не верный");
         contextMenuPage.alertAccept();
     }
 }

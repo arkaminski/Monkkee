@@ -16,6 +16,7 @@ public class InputTags {
         this.driver = driver;
         this.label = label;
     }
+
     public static By TAGS_INPUT = By.id("new-tag");
     public static By TAGS_INPUT_BUTTON = By.id("assign-new-tag");
     public static By MESSAGE_TAGS = By.xpath("//a[@class = 'tag ng-binding']");

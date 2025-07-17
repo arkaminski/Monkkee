@@ -14,7 +14,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
                 .userClickButton();
-
         Assert.assertTrue(mainPage.isPageOpen(),"Text does not match");
     }
 
@@ -23,7 +22,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword("","")
                 .userClickButton();
-
         assertEquals(loginPage.errorMessageField(), "Mandatory field","Text does not match");
     }
 
@@ -32,7 +30,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword("", "Resultreport5%")
                 .userClickButton();
-
         assertEquals(loginPage.errorMessageField(), "Mandatory field","Text does not match");
     }
 
@@ -41,7 +38,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword("artkami0612@gmail.com", "")
                 .userClickButton();
-
         assertEquals(loginPage.errorMessageField(), "Mandatory field","Text does not match");
     }
 
@@ -50,7 +46,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword("artkami0612@gmail.com.",password)
                 .userClickButton();
-
         assertEquals(loginPage.errorMessageLogin(), "Login failed","Text does not match");
     }
 
@@ -59,7 +54,6 @@ public class LoginTest extends BaseTest {
         loginPage.open()
                 .enterLoginAndPassword(email,"Resultreport5")
                 .userClickButton();
-
         assertEquals(loginPage.errorMessageLogin(), "Login failed","Text does not match");
     }
 }

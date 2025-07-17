@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 @Log4j2
-
 public class CheckBox {
 
     WebDriver driver;
@@ -19,10 +18,9 @@ public class CheckBox {
         entry.get(0).click();
         log.info("List entre checkBox");
         return this;
-
     }
+
     public CheckBox(WebDriver driver) {
         this.driver = driver;
-
     }
 }

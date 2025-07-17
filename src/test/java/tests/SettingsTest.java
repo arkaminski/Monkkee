@@ -1,9 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -21,8 +19,8 @@ public class SettingsTest extends BaseTest {
         settingsPage.selectLanguage()
                 .clickButtonOkLanguage();
 
-        assertEquals(settingsPage.textMessageLanguage("Seu idioma foi alterado com sucesso"),textLanguage,"Text does not match");
-
+        assertEquals(settingsPage.textMessageLanguage("Seu idioma foi alterado com sucesso"),
+                textLanguage,"Text does not match");
     }
 
     @Test(description = "logout")
@@ -31,7 +29,6 @@ public class SettingsTest extends BaseTest {
                 .enterLoginAndPassword(email, password)
                 .userClickButton();
         settingsPage.logout();
-
         assertTrue(homePage.isPageOpen());
     }
 
@@ -45,13 +42,11 @@ public class SettingsTest extends BaseTest {
                 .nicknameClickCheckBox();
         settingsPage.selectNickName("Hotel2");
         settingsPage.clickButtonOkTime();
-
-        assertEquals(settingsPage.getMessageTextAliasAndTime("Your settings have been saved successfully"),textTimeAndAlies,"Text does not match");
-
+        assertEquals(settingsPage.getMessageTextAliasAndTime("Your settings have been saved successfully"),
+                textTimeAndAlies,"Text does not match");
         settingsPage.deleteNickName();
         settingsPage.nicknameClickCheckBox();
         settingsPage.clickButtonOkTime();
-
     }
 
     @Test(description = "Change page time")
@@ -64,9 +59,7 @@ public class SettingsTest extends BaseTest {
         settingsPage.clickButtonTime()
                 .listTimeLimit()
                 .clickButtonOkTime();
-
-        assertEquals(settingsPage.getMessageTextAliasAndTime("Your settings have been saved successfully"),textTimeAndAlies,"Text does not match");
-
+        assertEquals(settingsPage.getMessageTextAliasAndTime("Your settings have been saved successfully"),
+                textTimeAndAlies,"Text does not match");
     }
-
 }

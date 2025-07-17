@@ -1,7 +1,6 @@
 package tests;
 
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
 
 public class TextEditorTest extends BaseTest {
@@ -20,13 +19,11 @@ public class TextEditorTest extends BaseTest {
         textEditorPage.buttonBlockEmage()
                 .selectFileLoading()
                 .clickButtonSave();
-
         assertTrue(homePage.isPageOpen());
-
         mainPage.clickButtonHome();
         mainPage.selectCheckBox();
         contextMenuPage.clickButtonDelete()
                 .getText();
         contextMenuPage.alertAccept();
     }
-    }
+}

@@ -52,7 +52,8 @@ public class BaseTest {
             driver.manage().window().maximize();
         }
         email = System.getenv().getOrDefault("MONKKEE_EMAIL", PropertyReader.getProperty("monkkee.email"));
-        password = System.getenv().getOrDefault("MONKKEE_PASSWORD", PropertyReader.getProperty("monkkee.password"));
+        password = System.getenv().getOrDefault("MONKKEE_PASSWORD",
+                PropertyReader.getProperty("monkkee.password"));
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
@@ -69,6 +70,5 @@ public class BaseTest {
             takeScreenshot(driver);
             driver.quit();
         }
-
     }
 }

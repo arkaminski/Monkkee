@@ -2,7 +2,6 @@ package tests;
 
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -13,7 +12,6 @@ public class HomeTest extends BaseTest {
     public void opensWebsite() {
         homePage.open()
                 .isPageOpen();
-
         assertTrue(homePage.isPageOpen());
     }
 
@@ -22,35 +20,38 @@ public class HomeTest extends BaseTest {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
                 .clickHeaderMenu("Über monkkee");
-
-        assertEquals(homePage.getTextHomeRubricAbout(), "Online Tagebuch schreiben – privat und sicher","Message does not match");
-
+        assertEquals(homePage.getTextHomeRubricAbout(), "Online Tagebuch schreiben – privat und sicher",
+                "Message does not match");
     }
+
     @Test(description = "Click header menu about en")
     public void clickHeaderMenuAboutEn() {
         homePage.open()
                 .choiceLanguageClick("Français")
                 .choiceLanguageClick("English")
                 .clickHeaderMenu("About");
-
-        assertEquals(homePage.getTextHomeRubricAbout(), "Keep a private and secure online diary","Message does not match");
-
+        assertEquals(homePage.getTextHomeRubricAbout(), "Keep a private and secure online diary",
+                "Message does not match");
     }
+
     @Test(description = "Click header menu about fr")
     public void clickHeaderMenuAboutFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
                 .clickHeaderMenu("A propos");
 
-        assertEquals(homePage.getTextHomeRubricAbout(), "Tenir un journal intime en ligne – privé et sécurisé","Message does not match");
+        assertEquals(homePage.getTextHomeRubricAbout(), "Tenir un journal intime en ligne – privé et sécurisé",
+                "Message does not match");
     }
+
     @Test(description = "Click header menu about pt")
     public void clickHeaderMenuAboutPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
                 .clickHeaderMenu("Sobre");
 
-        assertEquals(homePage.getTextHomeRubricAbout(), "Tenha um diário online privado e seguro", "Message does not match");
+        assertEquals(homePage.getTextHomeRubricAbout(), "Tenha um diário online privado e seguro",
+                "Message does not match");
     }
 
     @Test(description = "Click header menu features de")
@@ -59,9 +60,10 @@ public class HomeTest extends BaseTest {
                 .choiceLanguageClick("Deutsch")
                 .clickHeaderMenu("Funktionen");
 
-        assertEquals(homePage.getTextHomeRubricFeatures(), "Ohne Schnickschnack - die Funktionen von monkkee","Message does not match");
-
+        assertEquals(homePage.getTextHomeRubricFeatures(), "Ohne Schnickschnack - die Funktionen von monkkee",
+                "Message does not match");
     }
+
     @Test(description = "Click header menu features en")
     public void clickHeaderMenuFeaturesEn() {
         homePage.open()
@@ -69,7 +71,8 @@ public class HomeTest extends BaseTest {
                 .choiceLanguageClick("English")
                 .clickHeaderMenu("Features");
 
-        assertEquals(homePage.getTextHomeRubricFeatures(), "monkkee’s features - no bells and whistles, plain functionality","Message does not match");
+        assertEquals(homePage.getTextHomeRubricFeatures(), "monkkee’s features - no bells and whistles," +
+                " plain functionality","Message does not match");
 
     }
 
@@ -108,7 +111,8 @@ public class HomeTest extends BaseTest {
                 choiceLanguageClick("Français")
                 .choiceLanguageClick("English")
                 .clickHeaderMenu("Security");
-        assertEquals(homePage.getTextHomeRubricSecurity(), "Secure end-to-end encryption","Message does not match");
+        assertEquals(homePage.getTextHomeRubricSecurity(), "Secure end-to-end encryption",
+                "Message does not match");
     }
 
     @Test(description = "Click header menu security fr")
@@ -137,5 +141,4 @@ public class HomeTest extends BaseTest {
         assertEquals(homePage.getTextHomeRubricDonate(),
                 "Was kostet monkkee?","Message does not match");
     }
-
 }

@@ -24,15 +24,14 @@ public class Calendar {
         log.info("Select and click on the day " + day);
         return this;
     }
+
     public String getMessageEntries () {
         String dataMessage = driver.findElement(GET_MESSAGE_CALENDAR).getText();
         log.info("Receive a message about a found record");
         return dataMessage;
-
     }
 
     public Calendar(WebDriver driver) {
         this.driver = driver;
     }
 }
-
