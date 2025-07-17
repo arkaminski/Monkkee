@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
@@ -9,6 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class HomeTest extends BaseTest {
 
     @Test(description = "Open website", priority = 1)
+    @Owner("akaminski")
     public void opensWebsite() {
         homePage.open()
                 .isPageOpen();
@@ -16,6 +18,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu about de", priority = 1)
+    @Owner("akaminski")
     public void clickHeaderMenuAboutDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -25,6 +28,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu about en", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuAboutEn() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -35,6 +39,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu about fr", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuAboutFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -45,6 +50,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu about pt", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuAboutPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -55,6 +61,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu features de", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuFeaturesDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -65,6 +72,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu features en", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuFeaturesEn() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -77,6 +85,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu fea" + "" + "tures fr", priority = 2)
+    @Owner("akaminski")
     public void clickHeaderMenuFeaturesFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -87,6 +96,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu features pt", priority = 2)
+    @Owner("akaminski")
     public void clickHeaderMenuFeaturesPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -97,6 +107,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu security de", priority = 2)
+    @Owner("akaminski")
     public void clickHeaderMenuSecurityDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -106,6 +117,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu security en", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuSecurityEn() {
         homePage.open().
                 choiceLanguageClick("Français")
@@ -116,6 +128,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu security fr", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuSecurityFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -125,6 +138,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu security pt", priority = 3)
+    @Owner("akaminski")
     public void clickHeaderMenuSecurityPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -134,6 +148,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(description = "Click header menu donate de", priority = 2)
+    @Owner("akaminski")
     public void clickHeaderMenuDonateDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")

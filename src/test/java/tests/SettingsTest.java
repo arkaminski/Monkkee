@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import static org.testng.Assert.assertEquals;
@@ -50,6 +51,7 @@ public class SettingsTest extends BaseTest {
     }
 
     @Test(description = "Change page time", priority = 2)
+    @Owner("akaminski")
     public void changePageTime() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)

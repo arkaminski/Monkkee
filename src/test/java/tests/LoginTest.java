@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class LoginTest extends BaseTest {
 
     @Test(description = "Enter login and password  valid data", priority = 1)
+    @Owner("akaminski")
     public void inputValidDateUserAndPassword () {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -18,6 +20,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Left the fields blank", priority = 2)
+    @Owner("akaminski")
     public void noValidDateUserLeftFieldsBlank (){
         loginPage.open()
                 .enterLoginAndPassword("","")
@@ -26,6 +29,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Left field name empty", priority = 2)
+    @Owner("akaminski")
     public void noValidDateUserEnteredOnlyPassword () {
         loginPage.open()
                 .enterLoginAndPassword("", "Resultreport5%")
@@ -34,6 +38,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Left field password empty", priority = 2)
+    @Owner("akaminski")
     public void noValidDateUserEnteredOnlyName () {
         loginPage.open()
                 .enterLoginAndPassword("artkami0612@gmail.com", "")
@@ -42,6 +47,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Made a mistake in the name field", priority = 3)
+    @Owner("akaminski")
     public void noValidDateUserEnteredNameWithError (){
         loginPage.open()
                 .enterLoginAndPassword("artkami0612@gmail.com.",password)
@@ -50,6 +56,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Made a mistake in the password field", priority = 3)
+    @Owner("akaminski")
     public void noValidDateUserEnteredPasswordWithError(){
         loginPage.open()
                 .enterLoginAndPassword(email,"Resultreport5")

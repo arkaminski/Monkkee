@@ -38,19 +38,17 @@ public class BaseTest {
 
     @Step("Setting up and opening the browser")
     public void setUp(@Optional("chrome") String browser, ITestContext testContext) {
-        if (browser.equals("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        } else {
+        } else if (browser.equalsIgnoreCase("edge")){
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--start-maximized");
             driver = new EdgeDriver(options);
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
         }
         email = System.getenv().getOrDefault("MONKKEE_EMAIL", PropertyReader.getProperty("monkkee.email"));
         password = System.getenv().getOrDefault("MONKKEE_PASSWORD",

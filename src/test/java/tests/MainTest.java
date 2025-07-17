@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 
@@ -16,6 +17,7 @@ public class MainTest extends BaseTest {
 
 
     @Test(description = "Create entry", priority = 1)
+    @Owner("akaminski")
     public void createEntry() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -33,6 +35,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test (description = "Language selection settings", priority = 1)
+    @Owner("akaminski")
     public void selectAndDeleteCheckBox() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -50,6 +53,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(description = "Search for text by text", priority = 1)
+    @Owner("akaminski")
     public void searchTextByText() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -68,6 +72,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(description = "Search text for calendar", priority = 1)
+    @Owner("akaminski")
     public void searchTextByDate() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -84,6 +89,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(description = "Adding a tag to a post", priority = 1)
+    @Owner("akaminski")
     public void createTagInPost() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -101,6 +107,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(description = "Delete tag by name", priority = 1)
+    @Owner("akaminski")
     public void deleteTag() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)

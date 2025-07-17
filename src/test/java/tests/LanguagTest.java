@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 
@@ -16,6 +17,7 @@ public class LanguagTest extends BaseTest {
             "go to the menu item \"Settings\" after login.";
 
     @Test(description = "Page language de selection", priority = 1)
+    @Owner("akaminski")
     public void changeLanguageDe () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Deutsch");
@@ -24,6 +26,7 @@ public class LanguagTest extends BaseTest {
     }
 
     @Test(description = "Page language fr selection", priority = 3)
+    @Owner("akaminski")
     public void changeLanguageFr () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Français");
@@ -32,6 +35,7 @@ public class LanguagTest extends BaseTest {
     }
 
     @Test(description = "Page language pt selection", priority = 2)
+    @Owner("akaminski")
     public void changeLanguagePT () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Portuguese");
@@ -40,6 +44,7 @@ public class LanguagTest extends BaseTest {
     }
 
     @Test(description = "Page language en selection", priority = 3)
+    @Owner("akaminski")
     public void changeLanguageEn () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Français")
