@@ -21,6 +21,7 @@ public class LanguagePage extends BasePage{
         log.info("Choose language page " + language);
         return this;
     }
+
     @Step("Language change message")
     public String languageMessage(){
         return driver.findElement(LANGUAGE_TEXT).getText();

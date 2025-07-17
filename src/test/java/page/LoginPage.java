@@ -14,8 +14,6 @@ public class LoginPage extends BasePage{
     public static By ERROR_LOGIN = By.xpath("//div[normalize-space(text()) = 'Login failed']");
     public static By LOGIN_LANGUAGE = By.xpath("//span[@class = 'language-switcher' ]//a");
 
-
-
     @Step("Opens login page")
     public LoginPage open(){
         driver.get(BASE_URL + "/app/#/");
@@ -42,12 +40,14 @@ public class LoginPage extends BasePage{
         log.info("Enters password " + password);
         return this;
     }
+
     @Step("Clicks button login")
     public void userClickButton(){
         driver.findElement(LOGIN_BUTTON_LOGIN_PAGE).click();
         log.info("Click button login");
         this.isPageOpen();
     }
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }

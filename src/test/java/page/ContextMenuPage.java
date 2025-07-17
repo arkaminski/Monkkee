@@ -15,11 +15,13 @@ public class ContextMenuPage extends BasePage {
         driver.findElement(BUTTON_DELETE).click();
         return this;
     }
+
     @Step("Click button teg")
     public void clickButtonTeg(){
         driver.findElement(BUTTON_DELETE_TEG).click();
         log.info("Click button teg");
     }
+
     @Step("Get text alert")
     public String getText(){
         Alert alert = driver.switchTo().alert();

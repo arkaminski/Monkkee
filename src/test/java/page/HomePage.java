@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -26,6 +25,7 @@ public class HomePage extends BasePage{
         log.info("Open home page " + BASE_URL);
         return this;
     }
+
     @Step("Click button sing up")
     public void clickButtonSingUP() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -74,6 +74,7 @@ public class HomePage extends BasePage{
         log.info("Text home rubric security " + text);
         return text;
     }
+
     @Step("Text home rubric donate")
     public String getTextHomeRubricDonate() {
         List<WebElement> textAbout = driver.findElements(HEADER_TEXT_MENU);

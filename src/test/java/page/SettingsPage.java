@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
 
 @Log4j2
@@ -70,13 +69,11 @@ public class SettingsPage extends BasePage {
         return this;
     }
 
-
     @Step("Click button OK language")
     public void clickButtonOkLanguage () {
         driver.findElement(BUTTON_OK).click();
         log.info("Click button OK language");
     }
-
 
     @Step("Text message language")
     public String textMessageLanguage (String text){
@@ -92,7 +89,6 @@ public class SettingsPage extends BasePage {
         return this;
     }
 
-
     @Step("Select nickname")
     public String selectNickName(String text) {
         driver.findElement(NICKNAME_SELECT).sendKeys(text);
@@ -105,7 +101,6 @@ public class SettingsPage extends BasePage {
         driver.findElement(NICKNAME_SELECT).clear();
         log.info("Delete nickname");
         return this;
-
     }
 
     @Step("Click button time")
@@ -129,6 +124,7 @@ public class SettingsPage extends BasePage {
         log.info("Click button time");
         return this;
     }
+
     @Step("Text message time and alias")
     public String getMessageTextAliasAndTime(String text) {
         driver.findElement(MESSAGE_TEXT_ALIES_TIME).getText();

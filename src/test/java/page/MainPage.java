@@ -17,8 +17,6 @@ public class MainPage extends BasePage{
     public static final By TEXT_MESSAGE_ENTER_USER = By.id("back-to-overview");
     public static final By TEXT_BUTTON_TAGS = By.xpath("//a[text() = 'Manage tags']");
 
-
-
     @Step("Click button create entry")
     public MainPage clickCreateButton() throws InterruptedException {
         Thread.sleep(100);
@@ -26,23 +24,27 @@ public class MainPage extends BasePage{
         log.info("Click button entry");
         return this;
     }
+
     @Step("Click button home")
     public MainPage clickButtonHome() {
         driver.findElement(BUTTON_ICON_HOME).click();
         log.info("Click button home ");
         return this;
     }
+
     @Step("Text message records")
     public String textMessageRecords(String text) {
         driver.findElement(TEXT_MESSAGE_ENTER_USER).getText();
         log.info("Created record text " +text);
         return this.toString();
     }
+
     @Step("Select check box")
     public void selectCheckBox(){
         new CheckBox(driver).selectCheckBox();
         log.info("Select check box");
     }
+
     @Step("Search input")
     public MainPage searchInput(String text) throws InterruptedException {
         Thread.sleep(1200);
@@ -50,6 +52,7 @@ public class MainPage extends BasePage{
         log.info("Search records by text " + text);
         return this;
     }
+
     @Step("Search message")
     public String messageSearch(){
         return new InputSearch(driver).messageSearch();
@@ -61,6 +64,7 @@ public class MainPage extends BasePage{
         log.info("Search entries by date " + monthYear  +  day);
         return this;
     }
+
     @Step("Message search date")
     public String getMessageCalendar(){
         String date =  new Calendar(driver).getMessageEntries();
