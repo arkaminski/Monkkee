@@ -5,7 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 public class TextEditorTest extends BaseTest {
 
-    @Test(description = "Loading File ")
+    @Test(description = "Loading File ", priority = 1)
     public void loadingFileFormat() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)

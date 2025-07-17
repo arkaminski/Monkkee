@@ -15,7 +15,7 @@ public class MainTest extends BaseTest {
     String textTags = "How to use AI in chrome 64 using selenium Java";
 
 
-    @Test(description = "Create entry")
+    @Test(description = "Create entry", priority = 1)
     public void createEntry() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -32,7 +32,7 @@ public class MainTest extends BaseTest {
         contextMenuPage.alertAccept();
     }
 
-    @Test (description = "Language selection settings")
+    @Test (description = "Language selection settings", priority = 1)
     public void selectAndDeleteCheckBox() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -49,7 +49,7 @@ public class MainTest extends BaseTest {
         contextMenuPage.alertAccept();
     }
 
-    @Test(description = "Search for text by text")
+    @Test(description = "Search for text by text", priority = 1)
     public void searchTextByText() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -67,7 +67,7 @@ public class MainTest extends BaseTest {
         contextMenuPage.alertAccept();
     }
 
-    @Test(description = "Search text for calendar")
+    @Test(description = "Search text for calendar", priority = 1)
     public void searchTextByDate() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -83,7 +83,7 @@ public class MainTest extends BaseTest {
         contextMenuPage.alertAccept();
     }
 
-    @Test(description = "Adding a tag to a post")
+    @Test(description = "Adding a tag to a post", priority = 1)
     public void createTagInPost() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -100,7 +100,7 @@ public class MainTest extends BaseTest {
         contextMenuPage.alertAccept();
     }
 
-    @Test(description = "Delete tag by name")
+    @Test(description = "Delete tag by name", priority = 1)
     public void deleteTag() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)

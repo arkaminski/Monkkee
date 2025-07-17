@@ -47,6 +47,7 @@ public class BaseTest {
         } else {
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
+            options.addArguments("--start-maximized");
             driver = new EdgeDriver(options);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             driver.manage().window().maximize();
@@ -68,7 +69,7 @@ public class BaseTest {
     public void tearDown(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
             takeScreenshot(driver);
-            driver.quit();
         }
+        driver.quit();
     }
 }

@@ -8,14 +8,14 @@ import static org.testng.Assert.assertTrue;
 @Log4j2
 public class HomeTest extends BaseTest {
 
-    @Test(description = "Open website")
+    @Test(description = "Open website", priority = 1)
     public void opensWebsite() {
         homePage.open()
                 .isPageOpen();
         assertTrue(homePage.isPageOpen());
     }
 
-    @Test(description = "Click header menu about de")
+    @Test(description = "Click header menu about de", priority = 1)
     public void clickHeaderMenuAboutDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -24,7 +24,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu about en")
+    @Test(description = "Click header menu about en", priority = 3)
     public void clickHeaderMenuAboutEn() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -34,7 +34,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu about fr")
+    @Test(description = "Click header menu about fr", priority = 3)
     public void clickHeaderMenuAboutFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -44,7 +44,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu about pt")
+    @Test(description = "Click header menu about pt", priority = 3)
     public void clickHeaderMenuAboutPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -54,7 +54,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu features de")
+    @Test(description = "Click header menu features de", priority = 3)
     public void clickHeaderMenuFeaturesDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -64,7 +64,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu features en")
+    @Test(description = "Click header menu features en", priority = 3)
     public void clickHeaderMenuFeaturesEn() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -76,7 +76,7 @@ public class HomeTest extends BaseTest {
 
     }
 
-    @Test(description = "Click header menu fea" + "" + "tures fr")
+    @Test(description = "Click header menu fea" + "" + "tures fr", priority = 2)
     public void clickHeaderMenuFeaturesFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -86,7 +86,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu features pt")
+    @Test(description = "Click header menu features pt", priority = 2)
     public void clickHeaderMenuFeaturesPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -96,7 +96,7 @@ public class HomeTest extends BaseTest {
                         " funcionalidade simples", "Message does not match");
     }
 
-    @Test(description = "Click header menu security de")
+    @Test(description = "Click header menu security de", priority = 2)
     public void clickHeaderMenuSecurityDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")
@@ -105,7 +105,7 @@ public class HomeTest extends BaseTest {
                 "Sicherheit durch Ende-zu-Ende-Verschlüsselung","Message does not match");
     }
 
-    @Test(description = "Click header menu security en")
+    @Test(description = "Click header menu security en", priority = 3)
     public void clickHeaderMenuSecurityEn() {
         homePage.open().
                 choiceLanguageClick("Français")
@@ -115,7 +115,7 @@ public class HomeTest extends BaseTest {
                 "Message does not match");
     }
 
-    @Test(description = "Click header menu security fr")
+    @Test(description = "Click header menu security fr", priority = 3)
     public void clickHeaderMenuSecurityFr() {
         homePage.open()
                 .choiceLanguageClick("Français")
@@ -124,7 +124,7 @@ public class HomeTest extends BaseTest {
                 "Chiffrement de bout en bout pour une sécurité maximale","Message does not match");
     }
 
-    @Test(description = "Click header menu security pt")
+    @Test(description = "Click header menu security pt", priority = 3)
     public void clickHeaderMenuSecurityPt() {
         homePage.open()
                 .choiceLanguageClick("Portuguese")
@@ -133,7 +133,7 @@ public class HomeTest extends BaseTest {
                 "Criptografia segura de ponta a ponta", "Message does not match");
     }
 
-    @Test(description = "Click header menu donate de")
+    @Test(description = "Click header menu donate de", priority = 2)
     public void clickHeaderMenuDonateDe() {
         homePage.open()
                 .choiceLanguageClick("Deutsch")

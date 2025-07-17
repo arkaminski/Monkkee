@@ -15,7 +15,7 @@ public class LanguagTest extends BaseTest {
     String textEn = "Language changed temporarily. To change your profile language permanently, " +
             "go to the menu item \"Settings\" after login.";
 
-    @Test(description = "Page language de selection")
+    @Test(description = "Page language de selection", priority = 1)
     public void changeLanguageDe () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Deutsch");
@@ -23,7 +23,7 @@ public class LanguagTest extends BaseTest {
         languagePage.languageSelection("English");
     }
 
-    @Test(description = "Page language fr selection")
+    @Test(description = "Page language fr selection", priority = 3)
     public void changeLanguageFr () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Français");
@@ -31,7 +31,7 @@ public class LanguagTest extends BaseTest {
         languagePage.languageSelection("English");
     }
 
-    @Test(description = "Page language pt selection")
+    @Test(description = "Page language pt selection", priority = 2)
     public void changeLanguagePT () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Portuguese");
@@ -39,7 +39,7 @@ public class LanguagTest extends BaseTest {
         languagePage.languageSelection("English");
     }
 
-    @Test(description = "Page language en selection")
+    @Test(description = "Page language en selection", priority = 3)
     public void changeLanguageEn () throws InterruptedException {
         loginPage.open();
         languagePage.languageSelection("Français")

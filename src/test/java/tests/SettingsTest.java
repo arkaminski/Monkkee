@@ -9,7 +9,7 @@ public class SettingsTest extends BaseTest {
     String textLanguage = "Seu idioma foi alterado com sucesso";
     String textTimeAndAlies = "Your settings have been saved successfully";
 
-    @Test(description = "Language selection settings")
+    @Test(description = "Language selection settings", priority = 1)
     public void languageSelectionSettings() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -23,7 +23,7 @@ public class SettingsTest extends BaseTest {
                 textLanguage,"Text does not match");
     }
 
-    @Test(description = "logout")
+    @Test(description = "logout", priority = 2)
     public void logout () {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -32,7 +32,7 @@ public class SettingsTest extends BaseTest {
         assertTrue(homePage.isPageOpen());
     }
 
-    @Test(description = "Adding a login alias instead of email")
+    @Test(description = "Adding a login alias instead of email", priority = 3)
     public void addingAlies() throws InterruptedException, IOException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
@@ -49,7 +49,7 @@ public class SettingsTest extends BaseTest {
         settingsPage.clickButtonOkTime();
     }
 
-    @Test(description = "Change page time")
+    @Test(description = "Change page time", priority = 2)
     public void changePageTime() throws InterruptedException {
         loginPage.open()
                 .enterLoginAndPassword(email, password)
