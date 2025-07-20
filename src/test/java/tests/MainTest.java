@@ -11,8 +11,8 @@ public class MainTest extends BaseTest {
     String enteredText = "How to use AI in chrome 64 using selenium Java";
     String homeTextNotebook = "How to use AI in chrome 64 using selenium Java";
     String monthYear = "July 2025";
-    String day = "16";
-    String messageCalendar = "16 Jul. 2025";
+    String day = "17";
+    String messageCalendar = "17 Jul. 2025";
     String textTags = "How to use AI in chrome 64 using selenium Java";
 
 

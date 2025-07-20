@@ -12,12 +12,12 @@ import java.util.List;
 
 @Log4j2
 public class HomePage extends BasePage{
-    public static final By SING_UP_FREE = By.xpath("//a[@class='btn btn-primary home__register-btn' and @href='/account/registration']");
-    public static final By MESSAGE_LOCATOR_REGISTRATION_TEXT = By.xpath ("//h1[normalize-space(text()) = 'Registration']");
+
     public static final By HEADER_TEXT_MENU = By.xpath("//h2[@class]");
-    WebDriverWait wait;
+    public static final By dropdownToggle1 = By.xpath("//a[contains(@class, 'dropdown-toggle')]");
     String languageLocator = "//a[text() = '%s']";
-    String menuSelection = "//a[normalize-space(text())]/ancestor::div[@class = 'header__menu']//a[text() = '%s']";
+    String menuSelection = "//a[normalize-space(text())]/ancestor::" +
+            "div[@class = 'header__menu']//a[text() = '%s']";
 
     @Step("Open home page")
     public HomePage open() {
@@ -26,20 +26,10 @@ public class HomePage extends BasePage{
         return this;
     }
 
-    @Step("Click button sing up")
-    public void clickButtonSingUP() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.findElement(SING_UP_FREE).click();
-        log.info("Click button sing up ");
-    }
-
     @Step("Choice and click by language")
     public HomePage choiceLanguageClick(String language){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement dropdownToggle1 = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//a[contains(@class, 'dropdown-toggle')]")
-        ));
-        dropdownToggle1.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(dropdownToggle1)).click();
         driver.findElement(By.xpath(String.format(languageLocator, language))).click();
         log.info("Choice and click by language " + language);
         return this;
@@ -86,6 +76,7 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
     @Step("Page open")
     @Override
     public boolean isPageOpen() {

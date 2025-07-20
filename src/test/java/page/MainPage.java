@@ -8,6 +8,9 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 @Log4j2
 public class MainPage extends BasePage{
@@ -18,8 +21,8 @@ public class MainPage extends BasePage{
     public static final By TEXT_BUTTON_TAGS = By.xpath("//a[text() = 'Manage tags']");
 
     @Step("Click button create entry")
-    public MainPage clickCreateButton() throws InterruptedException {
-        Thread.sleep(100);
+    public MainPage clickCreateButton() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.findElement(BUTTON_CREATE_ENTRY).click();
         log.info("Click button entry");
         return this;
@@ -46,8 +49,8 @@ public class MainPage extends BasePage{
     }
 
     @Step("Search input")
-    public MainPage searchInput(String text) throws InterruptedException {
-        Thread.sleep(1200);
+    public MainPage searchInput(String text)  {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         new InputSearch(driver).searchInput(text);
         log.info("Search records by text " + text);
         return this;
