@@ -12,6 +12,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import page.*;
+import utils.DriverFactory;
 import utils.PropertyReader;
 import utils.TestListener;
 
@@ -37,29 +38,19 @@ public class BaseTest {
     @BeforeMethod
 
     @Step("Setting up and opening the browser")
-    public void setUp(@Optional("chrome") String browser, ITestContext testContext) {
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
-            driver = new ChromeDriver(options);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        } else if (browser.equalsIgnoreCase("edge")){
-            WebDriverManager.edgedriver().setup();
-            EdgeOptions options = new EdgeOptions();
-            options.addArguments("--start-maximized");
-            driver = new EdgeDriver(options);
-        }
+    public void setUp(@Optional("chrome") String browser, ITestContext testContext) throws Exception {
+        driver = DriverFactory.getDriver(browser);
+        testContext.setAttribute("driver", driver);
         email = System.getenv().getOrDefault("MONKKEE_EMAIL", PropertyReader.getProperty("monkkee.email"));
         password = System.getenv().getOrDefault("MONKKEE_PASSWORD",
                 PropertyReader.getProperty("monkkee.password"));
-        homePage = new HomePage(driver);
-        loginPage = new LoginPage(driver);
-        mainPage = new MainPage(driver);
-        textEditorPage = new TextEditorPage(driver);
-        contextMenuPage = new ContextMenuPage(driver);
-        settingsPage = new SettingsPage(driver);
-        languagePage = new LanguagePage(driver);
+        this.homePage = new HomePage(driver);
+        this.loginPage = new LoginPage(driver);
+        this.mainPage = new MainPage(driver);
+        this.textEditorPage = new TextEditorPage(driver);
+        this.contextMenuPage = new ContextMenuPage(driver);
+        this.settingsPage = new SettingsPage(driver);
+        this.languagePage = new LanguagePage(driver);
     }
 
     @Step("Exit the browser")
