@@ -11,8 +11,10 @@ public class ContextMenuPage extends BasePage {
     public static By BUTTON_DELETE = By.id("delete-entries");
     public static By BUTTON_DELETE_TEG = By.xpath("//a[@ng-click = 'deleteTag(tag)']") ;
 
+    @Step("Click button delete")
     public ContextMenuPage clickButtonDelete() {
         driver.findElement(BUTTON_DELETE).click();
+        log.info("Click button delete");
         return this;
     }
 

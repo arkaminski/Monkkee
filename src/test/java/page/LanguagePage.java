@@ -9,14 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @Log4j2
 public class LanguagePage extends BasePage{
+    public static final By dropdownToggle = By.xpath("//a[contains(@class, 'dropdown-toggle')]");
 
     @Step("Choose language page")
     public LanguagePage languageSelection(String language) throws InterruptedException {
         Thread.sleep(1200);
-        WebElement dropdownToggle = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//a[contains(@class, 'dropdown-toggle')]")
-        ));
-        dropdownToggle.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(dropdownToggle)).click();
         driver.findElement(By.xpath(String.format(languageLocator, language))).click();
         log.info("Choose language page " + language);
         return this;
@@ -30,6 +28,7 @@ public class LanguagePage extends BasePage{
     public LanguagePage(WebDriver driver) {
         super(driver);
     }
+
     @Override
     public boolean isPageOpen() {
         return isExist(PAGE_LOCATOR);

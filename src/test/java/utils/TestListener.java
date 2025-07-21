@@ -18,8 +18,6 @@ public class TestListener implements ITestListener {
         log.info(">>>>>>>>>>>>>>>TEST SUCCESS: " + result.getName() + ">>>>>>>>>>>>>>>" );
     }
     public void onTestFailure(org.testng.ITestResult result) {
-//        WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
-//        ((TakesScreenshot) driver).getScreenshotAs((OutputType.BYTES));
         log.error(">>>>>>>>>>>>>>>TEST FAILURE: " + result.getName() + ">>>>>>>>>>>>>>>" );
         takeScreenshot(result);
     }
